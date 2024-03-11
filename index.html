@@ -7,22 +7,48 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="sa" >
+    <div id="sa-app" >
      <h1>learn vue js </h1>
+     <br>
      <p> welcom {{ name }} happy </p>
     </div>
 
+    <first-compo-camlcas  :title="title.title"  ></first-compo-camlcas>
+
+    <first-compo-camlcas  :title="title"  ></first-compo-camlcas>
+
+
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <script>
-        let vm = new Vue({
+
+        //create a new component :
+
+        Vue.component("first-compo-camlcas" , {
+            data: function(){
+                return{
+                    count:0 
+                }
+            },
+            props:["title"],
+            template:"<p> this is a templete of a first component by {{title}}  </p>"
+        })
+
+
+        var vm = new Vue({
             //options
-            el:"#sa",
+            el:"#sa-app",
             //proprty 
             data:{
-               name : "sara",
-               age:26
-            }
+               name : "sara-name",
+               age:26,
+               posts:[
+                {id:1 , title:"111" , auther:"sara"},
+                {id:2 , title:"222" , auther:"sara"},
+
+               ]
+            },
         });
     </script>
 
