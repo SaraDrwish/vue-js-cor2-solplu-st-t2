@@ -1,6 +1,12 @@
-*{
+* , html ,body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(140, 175, 163);
+    /* background-color: rgba(140, 175, 163, 0.842); */
+    color: rgb(179, 72, 72);
+}
+
+div{
+    background-color: rgb(255, 153, 20);
+    padding: 2rem;
 }

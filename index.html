@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head
-    <meta charset="UTF-8">
+<head>
     <meta name="viewport" content="width=device-width, nitial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
     <title>learn vue js 1</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <section>
-        <h1>learn vue js </h1>
-        <div class="sa" id="sa">
-            <h2>sa-dev</h2>
-            <p>welcom {{name.toUpperCase()}} happy </p>
-        </div>
-    </section>
-    
+    <div id="sa" >
+     <h1>learn vue js </h1>
+     <p> welcom {{ name }} happy </p>
+    </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <script>
-        const vm = new Vue({
-            el: '#sa',
+        let vm = new Vue({
+            //options
+            el:"#sa",
+            //proprty 
             data:{
-             name : sara
+               name : "sara",
+               age:26
             }
-        })
+        });
     </script>
+
 </body>
 </html>
