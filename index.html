@@ -13,9 +13,9 @@
      <p> welcom {{ name }} happy </p>
     </div>
 
-    <first-compo-camlcas  :title="title.title"  ></first-compo-camlcas>
+    <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
 
-    <first-compo-camlcas  :title="title"  ></first-compo-camlcas>
+    <first-compo-kapapC  :title="title"  ></first-compo-kapapC>
 
 
 
@@ -25,14 +25,14 @@
 
         //create a new component :
 
-        Vue.component("first-compo-camlcas" , {
+        Vue.component('first-compo-kapapC', {
             data: function(){
                 return{
                     count:0 
                 }
             },
             props:["title"],
-            template:"<p> this is a templete of a first component by {{title}}  </p>"
+            template:` <p> this is a templete of a first component by {{title}}  </p> `
         })
 
 
@@ -45,8 +45,8 @@
                age:26,
                posts:[
                 {id:1 , title:"111" , auther:"sara"},
-                {id:2 , title:"222" , auther:"sara"},
-
+                {id:2 , title:"222" , auther:"sara1"},
+                {id:3 , title:"3333333" , auther:"sara3"}
                ]
             },
         });
