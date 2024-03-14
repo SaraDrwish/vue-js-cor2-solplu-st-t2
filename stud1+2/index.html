@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, nitial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>sara darwish vue js 2  - week2</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="sara-app" >
+     <h1>learn vue js </h1>
+     <br>
+     <p> welcom {{ name }} happy </p>
+  
+     <p>{{calaAg}}</p>
+
+    <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
+
+    <first-compo-kapapC  :title="title"  ></first-compo-kapapC>
+  </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+
+        //create a new component :
+
+        Vue.component('first-compo-kapapC', {
+            data: function(){
+                return{
+                    count:0 
+                }
+            },
+            props:["title"],
+            template:` <p> this is a templete of a first component by {{title}}  </p> `
+        })
+
+        var vm = new Vue({
+            //options
+            el:"#sara-app",
+            //proprty 
+            data:{
+               name : "sara-name",
+               age:26,
+               posts:[
+                {id:1 , title:"111" , auther:"sara"},
+                {id:2 , title:"222" , auther:"sara1"},
+                {id:3 , title:"3333333" , auther:"sara3"}
+               ]
+            },
+            //mtds
+            methods:{
+                calaAg : function(){
+                    console.log("run1")
+                    return  age*2
+                }
+
+            },
+        
+               
+        });
+    </script>
+
+</body>
+</html>
