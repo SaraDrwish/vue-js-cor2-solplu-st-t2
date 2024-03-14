@@ -29,21 +29,25 @@
         <input type="text"  v-model="findLangs" >     
     </div>
 
-
+    <div class="v3">
+      <first-compo-kapapC v-for="post in posts"  :title="post.title"  > </first-compo-kapapC>
+      <first-compo-kapapC v-for="post in posts"  :title="posts.title"  > </first-compo-kapapC>
+      <!-- <first-compo-kapapC  :title="title"  ></first-compo-kapapC> -->
+    </div>
 
   </div>
 
-    <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
-    <first-compo-kapapC  :title="title"  ></first-compo-kapapC>
+    <!-- <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
+    <first-compo-kapapC  :title="title"  ></first-compo-kapapC> -->
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
     <script>
 
         //create a new component :
-
         Vue.component('first-compo-kapapC', {
             data: function(){
+
                 return{
                     count:0 
                 }
@@ -65,6 +69,17 @@
                 {id:2 , title:"222" , auther:"sara1"},
                 {id:3 , title:"3333333" , auther:"sara3"}
                ],
+               findLangs : '',
+               langs:[
+                'html',
+                'css',
+                'js',
+                'json',
+                'java',
+                'c#',
+                'paython'
+               ],
+
             },
             //mtds
             methods:{
@@ -79,6 +94,13 @@
                 remessage : function(){
                     console.log("run message ")
                     return  this.message.split('').reverse().join('')
+                },
+
+                filterLangs: function(){
+                    let filtring = new RegExp(this.findLangs , 'i');
+                    return this.langs.filter( function(el){
+                        return el.match(filtring);
+                    })
                 }
             },
         

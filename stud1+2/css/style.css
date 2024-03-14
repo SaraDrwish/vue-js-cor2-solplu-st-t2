@@ -17,8 +17,13 @@
     padding: 1rem;
 }
 .v2{
-    background-color: tomato;
+    background-color: rgb(197, 154, 146);
     padding: 1rem;
-    color: rgb(42, 42, 77);
+    color: rgb(33, 33, 53);
     text-transform: capitalize;
+}
+.v3{
+    background-color: rgb(107, 85, 107);
+    padding: 1rem;
+    color: grey;
 }
