@@ -3,7 +3,29 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+a{
+    text-decoration: none;
+    color: unset;
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+li{
+    padding: 1%;
+}
+input{
+    outline: none;
+    border: none;
+    background-color: rgb(97, 76, 76);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: orange;
+    font-weight: 700;
+    /* font-size: 22px; */
+}
 .saraApp{
     display: flex;
     flex-direction: column;
