@@ -4,14 +4,17 @@
     <meta name="viewport" content="width=device-width, nitial-scale=1.0">
     <meta charset="UTF-8">
     <title>sara darwish vue js 2  - week2</title>
+    <link rel="shortcut icon" href="./assets/imgs/image.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="saraApp" >
+    <div id="saraApp"  class="saraApp">
+
      <h1>learn vue js </h1>
      <br>
      <p> welcom {{ name }} happy </p>
      <pr></pr>
+     <div class="v1">
      <p>{{calaAg()}}</p>
      <p>{{calaAg()}}</p>
      <p>{{calaAg()}}</p>
@@ -19,11 +22,19 @@
      <h3> {{remessage}}</h3>
      <h3> {{remessage}}</h3>
      <h3> {{remessage}}</h3>
+    </div>
+
+    <div class="v2">
+        <label>search about program languges :</label>
+        <input type="text"  v-model="findLangs" >     
+    </div>
+
+
+
   </div>
 
-  <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
-
-  <first-compo-kapapC  :title="title"  ></first-compo-kapapC>
+    <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
+    <first-compo-kapapC  :title="title"  ></first-compo-kapapC>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
