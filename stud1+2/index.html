@@ -12,7 +12,9 @@
      <br>
      <p> welcom {{ name }} happy </p>
   
-     <p>{{calaAg}}</p>
+     <p>{{calaAg()}}</p>
+     <p>calaAg</p>
+     <p>age : {{calaAg}}</p>
 
     <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
 
@@ -51,11 +53,19 @@
             },
             //mtds
             methods:{
+                // calaAg : function(){
+                //     console.log("run1")
+                //     return  this.age*2
+                // }
+
+            },
+            //computed proprty : 
+            // compute always , and it always doing cash to the val
+            computed:{
                 calaAg : function(){
                     console.log("run1")
-                    return  age*2
+                    return  this.age*2
                 }
-
             },
         
                
