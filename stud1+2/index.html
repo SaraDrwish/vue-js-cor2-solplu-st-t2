@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="sara-app" >
+    <div id="saraApp" >
      <h1>learn vue js </h1>
      <br>
      <p> welcom {{ name }} happy </p>
-  
+     <pr></pr>
      <p>{{calaAg()}}</p>
-     <p>calaAg</p>
-     <p>age : {{calaAg}}</p>
-
-    <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
-
-    <first-compo-kapapC  :title="title"  ></first-compo-kapapC>
+     <p>{{calaAg()}}</p>
+     <p>{{calaAg()}}</p>
+     <br>
+     <h3> {{remessage}}</h3>
+     <h3> {{remessage}}</h3>
+     <h3> {{remessage}}</h3>
   </div>
 
+  <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <first-compo-kapapC  :title="title"  ></first-compo-kapapC>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
     <script>
 
@@ -38,33 +41,33 @@
             template:` <p> this is a templete of a first component by {{title}}  </p> `
         })
 
-        var vm = new Vue({
+        const vm = new Vue({
             //options
-            el:"#sara-app",
+            el:"#saraApp",
             //proprty 
             data:{
                name : "sara-name",
                age:26,
+               message:"Hello to study vue lessons with zero ",
                posts:[
                 {id:1 , title:"111" , auther:"sara"},
                 {id:2 , title:"222" , auther:"sara1"},
                 {id:3 , title:"3333333" , auther:"sara3"}
-               ]
+               ],
             },
             //mtds
             methods:{
-                // calaAg : function(){
-                //     console.log("run1")
-                //     return  this.age*2
-                // }
-
-            },
-            //computed proprty : 
-            // compute always , and it always doing cash to the val
-            computed:{
                 calaAg : function(){
                     console.log("run1")
                     return  this.age*2
+                }
+            },
+            //computed proprty : 
+            // compute always , and it always doing cash to the prop
+            computed:{
+                remessage : function(){
+                    console.log("run message ")
+                    return  this.message.split('').reverse().join('')
                 }
             },
         
