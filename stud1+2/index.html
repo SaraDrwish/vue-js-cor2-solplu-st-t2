@@ -35,13 +35,20 @@
     <div class="v3">
       <first-compo-kapapC v-for="post in posts"  :title="post.title"  > </first-compo-kapapC>
       <first-compo-kapapC v-for="post in posts"  :title="posts.title"  > </first-compo-kapapC>
-      <!-- <first-compo-kapapC  :title="title"  ></first-compo-kapapC> -->
+     </div>
+
+    <div class="v4">
+        <label >user name</label>
+        <input type="text" v-model.lazy="username" >
+        <p>{{validatusename}}</p>
+        <label >password</label>
+        <input type="text"  >
     </div>
 
   </div>
 
-    <!-- <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
-    <first-compo-kapapC  :title="title"  ></first-compo-kapapC> -->
+    <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
+    <first-compo-kapapC  :title="title"  ></first-compo-kapapC>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
@@ -83,6 +90,7 @@
                 'paython',
                 'sass'
                ],
+               username:'',
 
             },
             //mtds
@@ -105,7 +113,21 @@
                     return this.langs.filter( function(el){
                         return el.match(filtring);
                     })
+                },
+
+                validatusename : function(){
+                    if(!this.username){
+                        return "username cannot be empty .. "
+                    }else if(this.username.length < 8){
+                        return "username is too short ... "
+                    }else if( ! isNaN(this.username) ){
+                        return "username cannot be numbers only ... "
+                    }else{
+                        return "Hello " +  this.username  + "  everything is good ... ^_^ ... "
+                    }
                 }
+
+
             },
         
                
