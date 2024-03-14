@@ -33,29 +33,24 @@
     </div>
 
     <div class="v3">
-      <first-compo-kapapC v-for="post in posts"  :title="post.title"  > </first-compo-kapapC>
-      <first-compo-kapapC v-for="post in posts"  :title="posts.title"  > </first-compo-kapapC>
+      <firstcompo  class="firstcompo" v-for="post in posts" :title="post.title"  ></firstcompo>
+      <!-- <firstcompo :title="posts[0].title"  > </firstcompo> --> 
      </div>
 
     <div class="v4">
         <label >user name</label>
         <input type="text" v-model.lazy="username" >
         <p>{{validatusename}}</p>
-        <label >password</label>
-        <input type="text"  >
     </div>
 
   </div>
-
-    <first-compo-kapapC  :title="posts.title"  ></first-compo-kapapC>
-    <first-compo-kapapC  :title="title"  ></first-compo-kapapC>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
     <script>
 
         //create a new component :
-        Vue.component('first-compo-kapapC', {
+        Vue.component('firstcompo', {
             data: function(){
 
                 return{
