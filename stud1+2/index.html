@@ -54,6 +54,18 @@
         <input type="text" v-model="sr">
     </div>
 
+    <div class="v6">
+        <p>clock watcher</p>
+
+        <label >hour</label>
+        <input type="text" v-model="hr">
+        <label >menuets </label>
+        <input type="text" v-model="mn">
+        <label >seconds</label>
+        <input type="text" v-model="sec">
+
+    </div>
+
   </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -99,6 +111,9 @@
                username:'',
                eg:0,
                sr:0,
+               hr:0,
+               mn:0,
+               sec:0,
 
             },
             //mtds
@@ -142,10 +157,27 @@
 
                 eg: function(v){
                      this.sr =  v/13;
+                     console.log("run eg fun")
                 },
                 sr: function(v){
                    this.eg=v*13;
+                   console.log("run sr fun")
+
                 },
+                hr:function (value){
+                  this.mn = value *60;
+                  console.log("run hr")
+                },
+                mn: function (value){
+                    this.hr = value / 60;
+                    this.sec = value * 60;
+                  console.log("run mn");
+                },
+                sec: function (value){
+                    this.mn = value/60;
+                  console.log("run sec")
+                },
+                
             },
         
                
