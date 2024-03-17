@@ -49,15 +49,15 @@ background-color: rgb(97, 76, 76);
 }
 
 .v3{
-    background-color: rgb(107, 85, 107);
+    background-color: rgb(107, 92, 107);
     padding: 1rem;
-    color: grey;
+    color: rgb(209, 187, 187);
 }
 .v4{
     text-transform: capitalize;
     background-color: rgb(253, 155, 98);
     padding: 1rem;
-    color: rgb(59, 104, 105); 
+    color: rgb(131, 168, 168); 
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -71,4 +71,17 @@ background-color: rgb(97, 76, 76);
 .v4 span{
     color: rgb(40, 107, 26);
     font-size: 19px;
+}
+
+.v5{
+    background-color: grey;
+    color: violet;
+    font-size: 22px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60%;
+    margin: 1rem auto;
+    border-radius: 2rem;
 }

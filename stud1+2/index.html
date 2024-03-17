@@ -43,6 +43,17 @@
         <p>{{validatusename}}</p>
     </div>
 
+    <div class="v5">
+
+        <p >v 17 eatchers </p>
+        <br>
+
+        <label >egyptian pounds</label>
+        <input type="text" v-model="eg">
+        <label >saudi rials </label>
+        <input type="text" v-model="sr">
+    </div>
+
   </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -86,6 +97,8 @@
                 'sass'
                ],
                username:'',
+               eg:0,
+               sr:0,
 
             },
             //mtds
@@ -123,6 +136,16 @@
                 }
 
 
+            },
+            //watchers:
+            watch:{
+
+                eg: function(v){
+                     this.sr =  v/13;
+                },
+                sr: function(v){
+                   this.eg=v*13;
+                },
             },
         
                
