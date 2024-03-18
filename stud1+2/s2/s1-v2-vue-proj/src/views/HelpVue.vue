@@ -19,3 +19,14 @@ export default {
   },
 };
 </script>
+
+<style>
+.help {
+  margin: auto;
+  padding: 1rem;
+  background-image: url(../assets/6575688.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style>
