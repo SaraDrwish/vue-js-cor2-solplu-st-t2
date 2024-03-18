@@ -1,24 +1,20 @@
 <template>
   <div id="app">
-    <HeaderApp/>
+    <HeaderApp />
     <router-view />
   </div>
 </template>
 
 <script>
+import HeaderApp from "./components/HeaderApp.vue";
 
-import HeaderApp from './components/HeaderApp.vue'
-
-export default{
-
-  name:'App',
-  components:{
-    HeaderApp 
-  }
-
-}
+export default {
+  name: "App",
+  components: {
+    HeaderApp,
+  },
+};
 </script>
-
 
 <style lang="scss">
 #app {
@@ -26,7 +22,7 @@ export default{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color:rgb(113, 140, 167)0;
+  color: rgb(113, 140, 167) 0;
 }
 
 nav {

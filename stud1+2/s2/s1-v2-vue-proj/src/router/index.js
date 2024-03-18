@@ -2,8 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
-import HelpVue from "../views/HelpVue.vue"; 
-
+import HelpVue from "../views/HelpVue.vue";
 
 Vue.use(VueRouter);
 
@@ -19,11 +18,10 @@ const routes = [
     component: AboutView,
   },
   {
-  path: "/help",
-  name: "Help",
-  component:HelpVue,
- }
-
+    path: "/help",
+    name: "Help",
+    component: HelpVue,
+  },
 ];
 
 const router = new VueRouter({
