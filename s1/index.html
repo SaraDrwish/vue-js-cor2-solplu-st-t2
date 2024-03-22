@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, nitial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>sara darwish vue js 2  - week2</title>
+    <link rel="shortcut icon" href="./assets/imgs/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="saraApp"  class="saraApp">
+
+     <h1>learn vue js </h1>
+     <br>
+     <p> welcom {{ name }} happy </p>
+     <pr></pr>
+     <div class="v1">
+     <p>{{calaAg()}}</p>
+     <p>{{calaAg()}}</p>
+     <p>{{calaAg()}}</p>
+     <br>
+     <h3> {{remessage}}</h3>
+     <h3> {{remessage}}</h3>
+     <h3> {{remessage}}</h3>
+    </div>
+
+    <div class="v2">
+        <label>search about program languges :</label>
+        <input type="text"  v-model="findLangs" >     
+        <ul>
+            <li v-for="lang in filterLangs " >{{lang}}</li>
+        </ul>
+    </div>
+
+    <div class="v3">
+      <firstcompo  class="firstcompo" v-for="post in posts" :title="post.title"  ></firstcompo>
+      <!-- <firstcompo :title="posts[0].title"  > </firstcompo> --> 
+     </div>
+
+    <div class="v4">
+        <label >user name</label>
+        <input type="text" v-model.lazy="username" >
+        <p>{{validatusename}}</p>
+    </div>
+
+    <div class="v5">
+
+        <p >v 17 eatchers </p>
+        <br>
+
+        <label >egyptian pounds</label>
+        <input type="text" v-model="eg">
+        <label >saudi rials </label>
+        <input type="text" v-model="sr">
+    </div>
+
+    <div class="v6">
+        <p>clock watcher</p>
+
+        <label >hour</label>
+        <input type="text" v-model="hr">
+        <label >menuets </label>
+        <input type="text" v-model="mn">
+        <label >seconds</label>
+        <input type="text" v-model="sec">
+
+    </div>
+
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+
+        //create a new component :
+        Vue.component('firstcompo', {
+            data: function(){
+
+                return{
+                    count:0 
+                }
+            },
+            props:["title"],
+            template:` <p> this is a templete of a first component by {{title}}  </p> `
+        })
+
+        const vm = new Vue({
+            //options
+            el:"#saraApp",
+            //proprty 
+            data:{
+               name : "sara-name",
+               age:26,
+               message:"Hello to study vue lessons with zero ",
+               posts:[
+                {id:1 , title:"111" , auther:"sara"},
+                {id:2 , title:"222" , auther:"sara1"},
+                {id:3 , title:"3333333" , auther:"sara3"}
+               ],
+               findLangs : '',
+               langs:[
+                'html',
+                'css',
+                'js',
+                'json',
+                'java',
+                'c#',
+                'paython',
+                'sass'
+               ],
+               username:'',
+               eg:0,
+               sr:0,
+               hr:0,
+               mn:0,
+               sec:0,
+
+            },
+            //mtds
+            methods:{
+                calaAg : function(){
+                    console.log("run1")
+                    return  this.age*2
+                }
+            },
+            //computed proprty : 
+            // compute always , and it always doing cash to the prop
+            computed:{
+                remessage : function(){
+                    console.log("run message ")
+                    return  this.message.split('').reverse().join('')
+                },
+
+                filterLangs: function(){
+                    let filtring = new RegExp(this.findLangs , 'i');
+                    return this.langs.filter( function(el){
+                        return el.match(filtring);
+                    })
+                },
+
+                validatusename : function(){
+                    if(!this.username){
+                        return "username cannot be empty .. "
+                    }else if(this.username.length < 8){
+                        return "username is too short ... "
+                    }else if( ! isNaN(this.username) ){
+                        return "username cannot be numbers only ... "
+                    }else{
+                        return "Hello " +  this.username  + "  everything is good ... ^_^ ... "
+                    }
+                }
+
+
+            },
+            //watchers:
+            watch:{
+
+                eg: function(v){
+                     this.sr =  v/13;
+                     console.log("run eg fun")
+                },
+                sr: function(v){
+                   this.eg=v*13;
+                   console.log("run sr fun")
+
+                },
+                hr:function (value){
+                  this.mn = value *60;
+                  console.log("run hr")
+                },
+                mn: function (value){
+                    this.hr = value / 60;
+                    this.sec = value * 60;
+                  console.log("run mn");
+                },
+                sec: function (value){
+                    this.mn = value/60;
+                  console.log("run sec")
+                },
+                
+            },
+        
+               
+        });
+    </script>
+
+</body>
+</html>
