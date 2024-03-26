@@ -1,3 +1,5 @@
+@import "/sass/global/reset";
+
 @for $i from 1 through 50 {
 
 .class-#{$i}{
@@ -6,4 +8,116 @@ font-size: 22px+11px ;
 color: orange;
 } 
 
+}
+
+
+
+// ////////////////
+
+.saraApp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgb(248, 158, 41);
+  padding: 2rem;
+  color: rgb(90, 109, 62);
+  margin: auto;
+  align-items: center;
+}
+
+.v1 {
+  width: 70%;
+  background-color: rgb(179, 189, 164);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.v2 {
+  width: 70%;
+  background-color: rgb(197, 154, 146);
+  padding: 1rem;
+  color: rgb(33, 33, 53);
+  text-transform: capitalize;
+  border-radius: 1rem;
+}
+
+.v2 input {
+  background-color: rgb(97, 76, 76);
+}
+
+.v3 {
+  width: 70%;
+  background-color: rgb(107, 92, 107);
+  padding: 1rem;
+  color: rgb(209, 187, 187);
+  border-radius: 1rem;
+}
+
+.v4 {
+  width: 70%;
+  text-transform: capitalize;
+  background-color: rgb(83, 65, 54);
+  padding: 1rem;
+  color: rgb(131, 168, 168);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.v4 p {
+  color: red;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.v4 span {
+  color: rgb(40, 107, 26);
+  font-size: 19px;
+}
+
+.v5 {
+
+  background-color: grey;
+  color: violet;
+  font-size: 22px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 70%;
+  margin: 1rem auto;
+  border-radius: 2rem;
+}
+
+.v6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(169, 118, 143);
+  color: rgb(19, 62, 62);
+  width: 70%;
+  text-align: center;
+  gap: 0.4rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  font-size: 22px;
+}
+
+.v6 label,
+.v6 input {
+  padding: 1rem;
+  margin: 1rem;
 }
