@@ -1,6 +1,6 @@
 <template>
   <div class="AppHeader">
-    <div class="logo">Sara Vue</div>
+    <div class="logo">Sara Vue js</div>
     <ul>
       <router-link to="/" tag="li" exact>
         <a class="active">Home</a>
@@ -9,6 +9,8 @@
       <router-link to="/about" tag="li"><a>About</a></router-link>
       |
       <router-link to="/help" tag="li"><a>Help</a></router-link>
+      |
+      <router-link to="/blog" tag="li"><a>Blog</a></router-link>
     </ul>
   </div>
 </template>

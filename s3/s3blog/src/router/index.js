@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import HelpView from "@/views/HelpView.vue";
+import BlogView from "../views/BlogView.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/help",
     name: "help",
     component: HelpView,
+  },
+  {
+    path: "/blog",
+    name: "blog",
+    component: BlogView,
   },
 ];
 
