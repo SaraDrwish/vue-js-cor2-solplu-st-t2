@@ -1,6 +1,6 @@
 <template>
   <div class="BlogPosts">
-    <span class="post-views">10</span>
+    <span class="post-views">{{ views }}</span>
     <h3>Blog Post Title</h3>
     <span class="date">28-03-2024</span>
     <p class="blog-content">
@@ -22,6 +22,7 @@
 <script>
 export default {
   name: "BlogPosts",
+  props: ["views"],
 };
 </script>
 
@@ -44,6 +45,7 @@ export default {
   .blog-content {
     line-height: 2.1;
     color: rgb(81, 104, 112);
+    margin: 1rem 0 2rem 0;
   }
 
   .post-views {
@@ -60,10 +62,9 @@ export default {
   }
 
   .postAll {
-    padding: 0.8rem;
-    margin: 1rem;
+    padding: 0.6rem;
+    margin: 1rem 0;
     border-radius: 0.4rem;
-    // text-align: center;
     font-weight: bold;
   }
   .post-auther {
@@ -75,7 +76,9 @@ export default {
     @extend .postAll;
     background-color: rgb(229, 201, 198);
     color: rgb(98, 98, 71);
-    text-align: right;
+    position: absolute;
+    right: 2rem;
+    bottom: 0.4rem;
   }
 }
 </style>

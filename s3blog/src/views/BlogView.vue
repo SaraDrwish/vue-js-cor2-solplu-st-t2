@@ -8,7 +8,11 @@
       <div class="row">
         <div class="col-md-8">
           <div class="poste-erea">
-            <BlogPosts />
+            <BlogPosts
+              v-for="post in posts"
+              :key="post.id"
+              :views="post.views"
+            />
           </div>
         </div>
         <div class="col-md-4">
@@ -24,6 +28,8 @@
 <script>
 import BlogPosts from "../components/Blog/BlogPosts.vue";
 import SidePare from "../components/Blog/SidePare.vue";
+import jsonPosts from "../json/blog_bosts.json";
+
 export default {
   name: "blog",
   components: {
@@ -34,6 +40,7 @@ export default {
     return {
       pageName: "Blog",
       pageDesc: "this is Bloge",
+      posts: jsonPosts,
     };
   },
 };
