@@ -2,14 +2,15 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-////
-import "bootstrap";
-// import "bootstrap/dist/css/bootstrap.main.css";
-////
+/////
 import BootstrapVue from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-
+///
+////
+// import "bootstrap";
+// import "bootstrap/dist/css/bootstrap.main.css";
+////
 /////
 import "normalize.css";
 import "./assets/scss/main.scss";
