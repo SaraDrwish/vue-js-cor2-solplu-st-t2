@@ -12,6 +12,11 @@
               v-for="post in posts"
               :key="post.id"
               :views="post.views"
+              :title="post.title"
+              :catagory="post.catagory"
+              :auther="post.auther"
+              :content="post.content"
+              :date="post.date"
             />
           </div>
         </div>

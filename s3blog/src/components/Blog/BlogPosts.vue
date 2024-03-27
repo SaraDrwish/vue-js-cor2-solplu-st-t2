@@ -1,19 +1,18 @@
 <template>
   <div class="BlogPosts">
     <span class="post-views">{{ views }}</span>
-    <h3>Blog Post Title</h3>
-    <span class="date">28-03-2024</span>
+    <h3>{{ title }}</h3>
+    <span class="date">{{ date }}</span>
     <p class="blog-content">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. consectetur
-      adipisicing elit. consectetur adipisicing elit. Eos libero vitae repellat?
+      {{ content }}
     </p>
 
     <div class="row">
       <div class="col-sm-6">
-        <span class="post-auther">auther name</span>
+        <span class="post-auther">{{ auther }}</span>
       </div>
       <div class="col-sm-6 text-right">
-        <span class="post-catag">category name</span>
+        <span class="post-catag">{{ catagory }}</span>
       </div>
     </div>
   </div>
@@ -22,7 +21,7 @@
 <script>
 export default {
   name: "BlogPosts",
-  props: ["views"],
+  props: ["views", "title", "catagory", "auther", "content", "date"],
 };
 </script>
 
