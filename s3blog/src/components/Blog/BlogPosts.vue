@@ -4,7 +4,7 @@
     <h3>{{ title }}</h3>
     <span class="date">{{ date }}</span>
     <p class="blog-content">
-      {{ content }}
+      {{ content | shorten }}
     </p>
 
     <div class="row">
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import "../../filters/shorten";
 export default {
   name: "BlogPosts",
   props: ["views", "title", "catagory", "auther", "content", "date"],

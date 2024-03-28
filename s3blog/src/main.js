@@ -16,6 +16,8 @@ import "normalize.css";
 import "./assets/scss/main.scss";
 ///
 
+import "./filters/shorten";
+
 Vue.config.productionTip = false;
 
 ////
