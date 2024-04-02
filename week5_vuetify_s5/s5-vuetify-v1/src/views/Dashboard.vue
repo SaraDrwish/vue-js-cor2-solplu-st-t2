@@ -1,6 +1,9 @@
 <template>
   <div class="dashboard">
-    <h1>dashboardyyyy page 111</h1>
+    <h2 class="subheading gray--text">dashboardyyyy page</h2>
+    <v-container class="my-5">
+      <p>dashboardy container</p>
+    </v-container>
   </div>
 </template>
 

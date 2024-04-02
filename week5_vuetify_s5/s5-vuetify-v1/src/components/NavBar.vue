@@ -33,8 +33,8 @@
               </v-btn>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-tile-title class="white--text">
-                {{ link.text }}</v-list-tile-title
+              <v-list-item-title class="white--text">
+                {{ link.text }}</v-list-item-title
               >
             </v-list-item-content>
           </v-list-item>
