@@ -1,9 +1,7 @@
 <template>
   <div class="navbar">
     <nav>
-      <!-- <v-toolbar flat app> -->
       <v-app-bar flat app>
-        <!-- <v-toolbar-side-icon class="gray--text"></v-toolbar-side-icon> -->
         <v-app-bar-nav-icon
           class="gray--text"
           @click="drawer = !drawer"
@@ -16,20 +14,27 @@
         <v-spacer></v-spacer>
         <v-btn text color="gray">
           <span>SignOut</span>
-          <!-- <v-icon right>mdi-exit_to_app</v-icon> -->
-          <!-- <v-icon right>mdi-arrow-right</v-icon> -->
+
           <v-icon right>mdi-export</v-icon>
         </v-btn>
       </v-app-bar>
 
-      <!-- </v-toolbar> -->
-
       <v-navigation-drawer v-model="drawer" app class="indigo">
-        <p class="error">tttttestttt</p>
-
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
+        <v-lis>
+          <v-list-tile v-for="link in links" :key="link.text">
+            <v-list-tile-action>
+              <v-btn icon>
+                <!-- <v-icon class="white--text">mdi-dashboard</v-icon> -->
+                <v-icon class="white--text">{{ link.icon }}</v-icon>
+              </v-btn>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title class="white--text">
+                {{ link.text }}</v-list-tile-title
+              >
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-lis>
       </v-navigation-drawer>
     </nav>
   </div>
@@ -41,6 +46,11 @@ export default {
   data() {
     return {
       drawer: false,
+      links: [
+        { icon: "mdi-widgets", text: "Dashboard", route: "/" },
+        { icon: "mdi-folder", text: "My Projects", route: "/projects" },
+        { icon: "mdi-account", text: "My Team", route: "/team" },
+      ],
     };
   },
 };
