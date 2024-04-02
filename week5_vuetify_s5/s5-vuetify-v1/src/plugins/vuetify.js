@@ -10,5 +10,6 @@ export default new Vuetify({
     success: "#ffc0cb",
     indigo: "#ffaa2c",
     error: "#bfc0cb",
+    info: "#bfc1cc",
   },
 });
