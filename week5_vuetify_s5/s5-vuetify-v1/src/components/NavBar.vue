@@ -3,6 +3,12 @@
     <nav>
       <!-- <v-toolbar flat app> -->
       <v-app-bar flat app>
+        <!-- <v-toolbar-side-icon class="gray--text"></v-toolbar-side-icon> -->
+        <v-app-bar-nav-icon
+          class="gray--text"
+          @click="drawer = !drawer"
+        ></v-app-bar-nav-icon>
+
         <v-toolbar-title class="text-uppercase gray--text">
           <span class="font-weight-light">Todo</span>
           <span class=" ">Sara</span>
@@ -10,12 +16,22 @@
         <v-spacer></v-spacer>
         <v-btn text color="gray">
           <span>SignOut</span>
-          <!-- <v-icon right>exit_to_app</v-icon> -->
+          <!-- <v-icon right>mdi-exit_to_app</v-icon> -->
+          <v-icon right>mdi-arrow-right</v-icon>
+          <!-- <v-icon right>mdi-domain</v-icon> -->
           <!-- <v-icon :icon="`mdiSvg:${mdiAccount}`">exit_to_app</v-icon> -->
         </v-btn>
       </v-app-bar>
 
       <!-- </v-toolbar> -->
+
+      <v-navigation-drawer v-model="drawer" app class="indigo">
+        <p>testttt</p>
+
+        <v-btn icon>
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+      </v-navigation-drawer>
     </nav>
   </div>
 </template>
@@ -23,6 +39,11 @@
 <script>
 export default {
   name: "navbar",
+  data() {
+    return {
+      drawer: false,
+    };
+  },
 };
 </script>
 

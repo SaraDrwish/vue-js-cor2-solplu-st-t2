@@ -2,9 +2,9 @@
   <v-app class="gray lighten-4">
     <NavBar />
     <v-main>
-      <v-content>
-        <router-view></router-view>
-      </v-content>
+      <!-- <v-content> -->
+      <router-view></router-view>
+      <!-- </v-content> -->
     </v-main>
   </v-app>
 </template>
