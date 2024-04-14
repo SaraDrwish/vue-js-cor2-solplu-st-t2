@@ -1,5 +1,5 @@
 <template>
-  <v-app class="gray lighten-4">
+  <v-app class="grey lighten-4">
     <NavBar />
     <v-main class="mx-4 mb-4">
       <!-- <v-content> -->
