@@ -3,32 +3,38 @@
     <v-subheader grey--text>Dashboardy Page</v-subheader>
     <v-container class="my-4 pa-5 secondary">
       <v-layout row class="mb-6">
-        <!-- <v-tooltip text="Tooltip" > -->
-        <v-tooltip bottom>
+        <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
-            <v-btn color="primary" dark v-bind="attrs" v-on="on">
-              Button
+            <v-btn
+              small
+              color="grey"
+              @click="sortBy('title')"
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-icon left small>mdi-folder</v-icon>
+              <span class="cap text-lowercase">by project name</span>
             </v-btn>
           </template>
-          <span>Tooltip</span>
-        </v-tooltip>
-        <v-tooltip bottom>
-          <!-- <template v-slot:activator="{ props }"> -->
-          <v-btn small color="grey" @click="sortBy('title')">
-            <v-icon left small>mdi-folder</v-icon>
-            <span class="cap text-lowercase">by project name</span>
-          </v-btn>
-          <!-- </template> -->
           <span>Sorted by Title</span>
         </v-tooltip>
 
-        <v-btn small class="mx-6" color="grey" @click="sortBy('person')">
-          <v-icon left small>mdi-account</v-icon>
-          <span class="cap text-lowercase">by user</span>
-          <v-tooltip activator="parent" location="bottom">
-            <span>Sorted by User</span>
-          </v-tooltip>
-        </v-btn>
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              v-bind="attrs"
+              v-on="on"
+              small
+              class="mx-6"
+              color="grey"
+              @click="sortBy('person')"
+            >
+              <v-icon left small>mdi-account</v-icon>
+              <span class="cap text-lowercase">by user</span>
+            </v-btn>
+          </template>
+          <span>Sorted by User</span>
+        </v-tooltip>
       </v-layout>
       <v-card
         class="text-capitalize"
@@ -104,9 +110,7 @@ export default {
   },
   methods: {
     sortBy(pop) {
-      this.projects.sort((a, b) => {
-        a[pop] < b[pop] ? -1 : 1;
-      });
+      this.projects.sort((a, b) => (a[pop] < b[pop] ? -1 : 1));
     },
   },
 };
