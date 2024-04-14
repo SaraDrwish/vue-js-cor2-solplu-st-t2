@@ -12,18 +12,13 @@
               src="https://cdn.vuetifyjs.com/docs/images/cards/purple-flowers.jpg"
               cover
             ></v-img> -->
-            <!-- <v-avatar
-              ><v-img :src="pers.avatar" height="200" contain></v-img
-            ></v-avatar> -->
             <v-avatar size="100" class="grey lighten-2"
               ><v-img :src="pers.avatar"></v-img
             ></v-avatar>
 
             <v-card-text>
               <div class="py-3">{{ pers.name }}</div>
-              <!-- <v-subheader  >{{ pers.name }}</v-subheader> -->
               <div grey--text>{{ pers.rol }}</div>
-              <!-- <p grey--text class="px-5">{{ pers.rol }}</p> -->
             </v-card-text>
             <v-card-actions>
               <v-btn text color="grey">

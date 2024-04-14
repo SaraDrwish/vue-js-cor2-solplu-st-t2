@@ -20,6 +20,15 @@
       </v-app-bar>
 
       <v-navigation-drawer v-model="drawer" app class="indigo">
+        <v-layout column align-center>
+          <v-flex class="mt-6">
+            <v-avatar size="100">
+              <img src="/imgs/wom.png" alt="womn avatar" />
+            </v-avatar>
+            <v-subheader class="white--text mt-2">sasa aaddl</v-subheader>
+            <!-- <p class="white--text mt-2">sasa aaddl</p> -->
+          </v-flex>
+        </v-layout>
         <v-list>
           <v-list-item
             v-for="link in links"
