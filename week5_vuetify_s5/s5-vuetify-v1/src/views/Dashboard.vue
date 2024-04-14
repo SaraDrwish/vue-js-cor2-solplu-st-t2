@@ -2,6 +2,16 @@
   <div class="dashboard">
     <v-subheader grey--text>Dashboardy Page</v-subheader>
     <v-container class="my-4 secondary">
+      <v-layout row class="mb-6">
+        <v-btn flat small color="grey" @click="sortBy">
+          <v-icon left small>mdi-folder</v-icon>
+          <span class="cap text-lowercase">by project name</span>
+        </v-btn>
+        <v-btn flat small class="mx-9" color="grey">
+          <v-icon left small>mdi-account</v-icon>
+          <span class="cap text-lowercase">by user</span>
+        </v-btn>
+      </v-layout>
       <v-card
         class="my-2 py-2 primary text-capitalize"
         flat
