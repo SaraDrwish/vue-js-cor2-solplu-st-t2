@@ -5,19 +5,22 @@
     <v-container class="my-5">
       <v-layout row wrap>
         <v-flex xs12 ms6 md4 lg3 v-for="pers in team" :key="pers.name">
-          <v-card text class="text-xs-center ma-4">
-            <!-- <v-responsive>
-              img
-            </v-responsive> -->
-            <v-img
+          <v-card text class="text-center ma-4 pa-2">
+            <!-- <v-img
               color="surface-variant"
               height="200"
               src="https://cdn.vuetifyjs.com/docs/images/cards/purple-flowers.jpg"
               cover
-            ></v-img>
+            ></v-img> -->
+            <!-- <v-avatar
+              ><v-img :src="pers.avatar" height="200" contain></v-img
+            ></v-avatar> -->
+            <v-avatar size="100"><v-img :src="pers.avatar"></v-img></v-avatar>
+
             <v-card-text>
               <v-subheader>{{ pers.name }}</v-subheader>
-              <p grey--text class="px-5">{{ pers.rol }}</p>
+              <v-subheader>{{ pers.rol }}</v-subheader>
+              <!-- <p grey--text class="px-5">{{ pers.rol }}</p> -->
             </v-card-text>
             <v-card-actions>
               <v-btn text color="grey">
@@ -37,11 +40,11 @@ export default {
   data() {
     return {
       team: [
-        { name: "lolo", rol: "wed dev" },
-        { name: "roro", rol: "wed designer" },
-        { name: "toto", rol: "ui/ux" },
-        { name: "meme", rol: " ux" },
-        { name: "lyly", rol: "ui " },
+        { name: "lolo", rol: "wed dev", avatar: "/imgs/hacker.png" },
+        { name: "roro", rol: "wed designer", avatar: "/imgs/man.png" },
+        { name: "toto", rol: "ui/ux", avatar: "/imgs/profile.png" },
+        { name: "meme", rol: " ux", avatar: "/imgs/wom.png" },
+        { name: "lyly", rol: "ui ", avatar: "/imgs/woman.png" },
       ],
     };
   },
