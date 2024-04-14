@@ -1,24 +1,24 @@
 <template>
   <div class="dashboard">
     <v-subheader grey--text>Dashboardy Page</v-subheader>
-    <v-container class="my-4 secondary">
+    <v-container class="my-4 pa-5 secondary">
       <v-layout row class="mb-6">
-        <v-btn flat small color="grey" @click="sortBy">
+        <v-btn small color="grey" @click="sortBy('title')">
           <v-icon left small>mdi-folder</v-icon>
           <span class="cap text-lowercase">by project name</span>
         </v-btn>
-        <v-btn flat small class="mx-9" color="grey">
+        <v-btn small class="mx-6" color="grey" @click="sortBy('person')">
           <v-icon left small>mdi-account</v-icon>
           <span class="cap text-lowercase">by user</span>
         </v-btn>
       </v-layout>
       <v-card
-        class="my-2 py-2 primary text-capitalize"
-        flat
+        class="text-capitalize"
+        text
         v-for="proj in projects"
         :key="proj.title"
       >
-        <v-layout row wrap :class="`pa-4 projc ${proj.status}`">
+        <v-layout row wrap :class="`pa-6 projc ${proj.status}`">
           <v-flex xs12 md6>
             <div class="caption grey--text">project title:</div>
             <div class="">{{ proj.title }}</div>
@@ -52,22 +52,22 @@ export default {
     return {
       projects: [
         {
-          title: "sa sa sa",
-          person: "sa Ad",
+          title: "sasa",
+          person: "asa Ad",
           due: "12-12",
           status: "ongoing",
           content: "lorem ds ds ds ssssssssssssssssssssssssssssssssssssssss ",
         },
         {
-          title: "mewe",
+          title: "ammml",
           person: "neppe",
           due: "14th-04-2024",
           status: "completed",
           content: "lorem15 ",
         },
         {
-          title: "la la",
-          person: "lala",
+          title: "lnma",
+          person: "alala",
           due: "06-06",
           status: "overdue",
           content:
@@ -83,6 +83,13 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    sortBy(p) {
+      this.projects.sort((a, b) => {
+        a[p] < b[p] ? -1 : 1;
+      });
+    },
   },
 };
 </script>
