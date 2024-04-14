@@ -1,10 +1,9 @@
 <template>
   <div class="dashboard">
-    <h2 class="subheading grey--text">dashboardy page</h2>
-    <v-container class="my-5">
-      <!-- <p>dashboardy container</p> -->
+    <v-subheader grey--text>Dashboardy Page</v-subheader>
+    <v-container class="my-4 secondary">
       <v-card
-        class="pa-2 text-capitalize"
+        class="my-2 py-2 primary text-capitalize"
         flat
         v-for="proj in projects"
         :key="proj.title"
@@ -23,10 +22,8 @@
             <div class="">{{ proj.due }}</div>
           </v-flex>
           <v-flex xs2 ms4 md2>
-            <!-- <div class="caption grey--text">status</div> -->
-            <!-- <div class="">{{ proj.status }}</div> -->
-            <div class="right">
-              <v-chip small :class="`${proj.status} white--text my-2`">
+            <div right class="right">
+              <v-chip small :class="`${proj.status} projec white--text my-2`">
                 {{ proj.status }}</v-chip
               >
             </div>
@@ -52,8 +49,8 @@ export default {
           content: "lorem ds ds ds ssssssssssssssssssssssssssssssssssssssss ",
         },
         {
-          title: "meme",
-          person: "nene",
+          title: "mewe",
+          person: "neppe",
           due: "14th-04-2024",
           status: "completed",
           content: "lorem15 ",
@@ -64,18 +61,15 @@ export default {
           due: "06-06",
           status: "overdue",
           content:
-            "dskjksdihkds  iofjsidfoasjfia jifjsifkjskjfioask ijisfjioksajfkasjf iojdsfkjaskfjskdj ",
+            "dskjksdihkds dfoasjfia jifjsifkjskjfioask ijisfjioksajfkasjf iojdsfkjaskfjskdj ",
         },
         {
           title: "meme",
           person: "nene",
           due: "10-10-2024",
           status: "completed",
-          content: `lorem15lorem15lorem15lor
-            em15lorem15lorem15lorem15lo
-            rem15vlorem15lorem15lorem15lorem15lor
-            em15lorem15lorem15lorem15
-            lorem15lorem15lorem15lorem15lorem15 `,
+          content:
+            "lorem15lorem15lorem15em15lorem15lorem15lorem15l rem15vlorem15lo5lorem15lorem15",
         },
       ],
     };
@@ -93,13 +87,13 @@ export default {
 .projc.overdue {
   border-left: 4px solid tomato;
 }
-.v-chip.overdue {
+.v-chip.projec.overdue {
   background: tomato;
 }
-.v-chip.ongoing {
+.v-chip.projec.ongoing {
   background: #ffaa22;
 }
-.v-chip.completed {
+.v-chip.projec.completed {
   background: #3cd1c2;
 }
 </style>
