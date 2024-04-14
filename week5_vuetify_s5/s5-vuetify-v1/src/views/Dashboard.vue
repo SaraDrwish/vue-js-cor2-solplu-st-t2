@@ -56,7 +56,7 @@
             <div class="">{{ proj.due }}</div>
           </v-flex>
           <v-flex xs2 ms4 md2>
-            <div right class="right">
+            <div right>
               <v-chip small :class="`${proj.status} projec white--text my-2`">
                 {{ proj.status }}</v-chip
               >
