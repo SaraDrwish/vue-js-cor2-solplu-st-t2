@@ -25,8 +25,7 @@
             <v-avatar size="100">
               <img src="/imgs/wom.png" alt="womn avatar" />
             </v-avatar>
-            <v-subheader class="white--text mt-2">sasa aaddl</v-subheader>
-            <!-- <p class="white--text mt-2">sasa aaddl</p> -->
+            <v-subheader class="white--text mt-2">sasa adl</v-subheader>
           </v-flex>
         </v-layout>
         <v-list>

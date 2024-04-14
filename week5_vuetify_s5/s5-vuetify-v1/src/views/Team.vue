@@ -6,12 +6,6 @@
       <v-layout row wrap>
         <v-flex xs12 ms6 md4 lg3 v-for="pers in team" :key="pers.name">
           <v-card text class="text-center ma-4 pa-2">
-            <!-- <v-img
-              color="surface-variant"
-              height="200"
-              src="https://cdn.vuetifyjs.com/docs/images/cards/purple-flowers.jpg"
-              cover
-            ></v-img> -->
             <v-avatar size="100" class="grey lighten-2"
               ><v-img :src="pers.avatar"></v-img
             ></v-avatar>
