@@ -4,8 +4,7 @@
 
     <v-container class="my-5">
       <v-expansion-panels>
-        <v-expansion-panel v-for="pr in projects" :key="pr.title">
-          <!-- <v-expansion-panel v-for="(item, i) in 2" :key="i"> -->
+        <v-expansion-panel v-for="pr in myProjects" :key="pr.title">
           <v-expansion-panel-header> Project Title </v-expansion-panel-header>
           <v-expansion-panel-content>
             <div :v-slot="header" class="">{{ pr.title }}</div>
@@ -60,13 +59,20 @@ export default {
           content:
             "lorem15lorem15lorem15em15lorem15lorem15lorem15l rem15vlorem15lo5lorem15lorem15",
         },
+        {
+          title: "wooowww",
+          person: "nene",
+          due: "XXXXXX",
+          status: "completed",
+          content: "lwwwwwwwwwwwwwwwwwwwww5lorem15lorem15",
+        },
       ],
     };
   },
   computed: {
     myProjects() {
       return this.projects.filter((prj) => {
-        return this.prj.person === "nene";
+        return prj.person === "nene";
       });
     },
   },
