@@ -51,6 +51,9 @@
             </v-avatar>
             <v-subheader class="white--text mt-2">sasa adl</v-subheader>
           </v-flex>
+          <v-flex class="ma-6">
+            <Popup />
+          </v-flex>
         </v-layout>
         <v-list>
           <v-list-item
@@ -77,8 +80,10 @@
 </template>
 
 <script>
+import Popup from "./Popup.vue";
 export default {
   name: "navbar",
+  components: { Popup },
   data() {
     return {
       drawer: false,
