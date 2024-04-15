@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- https://stackoverflow.com/questions/29820791/git-ignore-node-modules-folder-everywhere -->
     <v-dialog max-width="600px">
       <template v-slot:activator="{ on, attrs }">
         <v-btn text class="success" v-bind="attrs" v-on="on"
@@ -12,14 +11,16 @@
           <h2>add a new project ...</h2>
         </v-card-title>
         <v-card-text>
-          <v-form class="pa-3">
+          <v-form class="pa-3" ref="form">
             <v-text-field
+              :rules="inputRules"
               label="Title"
               v-model="title"
               prepend-icon="mdi-folder"
             >
             </v-text-field>
             <v-textarea
+              :rules="inputRules"
               label="Information"
               v-model="info"
               prepend-icon="mdi-pencil"
@@ -29,6 +30,7 @@
             <v-menu offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-text-field
+                  :rules="inputRules"
                   :v-slot="activator"
                   v-bind="attrs"
                   v-on="on"
@@ -59,11 +61,14 @@ export default {
       title: "",
       info: "",
       due: null,
+      inputRules: [(v) => v.length >= 3 || "min length has to be more than 3"],
     };
   },
   methods: {
     submit() {
-      console.log(this.title, this.info, "heeeee");
+      if (this.$refs.form.validate()) {
+        console.log(this.title, this.info, "heeeee");
+      }
     },
   },
   computed: {
