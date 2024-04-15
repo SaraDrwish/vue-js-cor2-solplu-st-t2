@@ -1,6 +1,14 @@
 <template>
   <div class="navbar">
     <nav>
+      <!-- ///////////////// -->
+      <v-snackbar small v-model="snackbar1" :timeout="4000" top color="success">
+        <span>Awsomyou !! have added the project successfully</span>
+        <v-btn text color="white" @click="snackbar1 = false">close</v-btn>
+      </v-snackbar>
+
+      <!-- ///////////////// -->
+
       <v-app-bar flat app>
         <v-app-bar-nav-icon
           class="gray--text"
@@ -52,7 +60,7 @@
             <v-subheader class="white--text mt-2">sasa adl</v-subheader>
           </v-flex>
           <v-flex class="ma-6">
-            <Popup />
+            <Popup @snackbar2emitEvent="snackbar1 = true" />
           </v-flex>
         </v-layout>
         <v-list>
@@ -92,6 +100,8 @@ export default {
         { icon: "mdi-folder", text: "My Projects", route: "/projects" },
         { icon: "mdi-account", text: "My Team", route: "/team" },
       ],
+      snackbar1: false,
+      // snackbar1: true,
     };
   },
 };

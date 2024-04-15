@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-dialog max-width="600px">
+    <v-dialog max-width="600px" v-model="dialog">
       <template v-slot:activator="{ on, attrs }">
         <v-btn text class="success" v-bind="attrs" v-on="on"
           >Add a New Project</v-btn
@@ -37,7 +37,11 @@
               </template>
               <v-date-picker v-model="due"></v-date-picker>
             </v-menu>
-            <v-btn @click="submit" text class="success mt-3 mx-0"
+            <v-btn
+              @click="submit"
+              text
+              class="success mt-3 mx-0"
+              :loading="loading1"
               >Add Project</v-btn
             >
           </v-form>
@@ -60,9 +64,11 @@ export default {
       inputRules: [
         {
           validator: this.validateLength,
-          message: "min length has to be more than 3",
+          message: "min length has to be more than 3 chars",
         },
       ],
+      loading1: false,
+      dialog: false,
     };
   },
   methods: {
@@ -73,15 +79,23 @@ export default {
       console.log("heeeee");
 
       if (this.$refs.form.validate()) {
-        const PopProject = analytics.ref("data");
-        PopProject.push({
+        this.loading1 = true;
+        const PopProject = {
           title: this.title,
           content: this.info,
           due: format(this.due, "Do MMM yyy"),
           person: "sasaaa",
           status: "ongoing",
-        });
-        console.log("Project added to database");
+        };
+        analytics
+          .collection("projects")
+          .add(PopProject)
+          .then(() => {
+            console.log("Project added to database");
+            this.loading1 = false;
+            this.dialog = false;
+            this.$emit("snackbar2emitEvent");
+          });
       }
     },
   },
