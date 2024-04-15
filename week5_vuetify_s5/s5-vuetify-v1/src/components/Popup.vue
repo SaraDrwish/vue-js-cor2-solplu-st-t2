@@ -54,6 +54,9 @@
 
 <script>
 import format from "date-fns/format";
+import db from "../fb.js";
+// import { getFirestore } from "firebase/firestore";
+
 export default {
   name: "Popup",
   data() {
@@ -68,6 +71,29 @@ export default {
     submit() {
       if (this.$refs.form.validate()) {
         console.log(this.title, this.info, "heeeee");
+        const PopProject = {
+          title: this.title,
+          content: this.content,
+          due: format(this.due, "Do MMM yyy"),
+          person: "this.person",
+          status: "ongoing",
+        };
+        // const db = getFirestore(firebaseApp);
+
+        db
+          // .collection("projects")
+          // .get(PopProject)
+          // .then(() => {
+          //   console.log("added in db");
+          // });
+          .collection("projects")
+          .add(PopProject)
+          .then(() => {
+            console.log("Added to database");
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+          });
       }
     },
   },
