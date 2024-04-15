@@ -12,6 +12,30 @@
           <span>Sara</span>
         </v-toolbar-title>
         <v-spacer></v-spacer>
+
+        <!-- dropdown menu statrt -->
+
+        <v-menu offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn small class="mx-6" v-bind="attrs" v-on="on">
+              <v-icon left>mdi-chevron-down</v-icon>
+              <span>Menu</span>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="lnk in links"
+              :key="lnk.text"
+              router
+              :to="lnk.route"
+            >
+              <v-list-item-title>{{ lnk.text }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+
+        <!-- dropdown menu end -->
+
         <v-btn text color="gray">
           <span>SignOut</span>
 
