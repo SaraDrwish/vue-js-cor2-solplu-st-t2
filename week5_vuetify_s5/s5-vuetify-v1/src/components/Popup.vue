@@ -3,8 +3,8 @@
     <v-dialog max-width="600px">
       <template v-slot:activator="{ on, attrs }">
         <v-btn text class="success" v-bind="attrs" v-on="on"
-          >Add a New Project
-        </v-btn>
+          >Add a New Project</v-btn
+        >
       </template>
       <v-card>
         <v-card-title>
@@ -13,25 +13,21 @@
         <v-card-text>
           <v-form class="pa-3" ref="form">
             <v-text-field
-              :rules="inputRules"
+              :rules="[inputRules]"
+              v-model.trim="title"
               label="Title"
-              v-model="title"
               prepend-icon="mdi-folder"
-            >
-            </v-text-field>
+            ></v-text-field>
             <v-textarea
-              :rules="inputRules"
+              :rules="[inputRules]"
+              v-model.trim="info"
               label="Information"
-              v-model="info"
               prepend-icon="mdi-pencil"
-            >
-            </v-textarea>
-            <!-- /// -->
+            ></v-textarea>
             <v-menu offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-text-field
-                  :rules="inputRules"
-                  :v-slot="activator"
+                  :rules="[inputRules]"
                   v-bind="attrs"
                   v-on="on"
                   label="Due Date"
@@ -41,7 +37,6 @@
               </template>
               <v-date-picker v-model="due"></v-date-picker>
             </v-menu>
-            <!-- /// -->
             <v-btn @click="submit" text class="success mt-3 mx-0"
               >Add Project</v-btn
             >
@@ -54,9 +49,7 @@
 
 <script>
 import format from "date-fns/format";
-import db from "../fb.js";
-// import { getFirestore } from "firebase/firestore";
-
+import database from "../fb";
 export default {
   name: "Popup",
   data() {
@@ -64,34 +57,51 @@ export default {
       title: "",
       info: "",
       due: null,
-      inputRules: [(v) => v.length >= 3 || "min length has to be more than 3"],
+      inputRules: [
+        {
+          validator: this.validateLength,
+          message: "min length has to be more than 3",
+        },
+      ],
     };
   },
   methods: {
-    async submit() {
+    validateLength(val) {
+      return val.length >= 3 || "min length has to be more than 3";
+    },
+    submit() {
+      // if (this.$refs.form.validate()) {
+      // console.log("heeeee");
+      // console.log(this.title, this.info, "heeeee");
+      // const PopProject = {
+      //   title: this.title,
+      //   content: this.info,
+      //   due: format(this.due, "Do MMM yyy"),
+      //   person: this.person,
+      //   status: "ongoing",
+      // };
+
+      // const database = database.database();
+      //   const PopProject = database.ref("data");
+      //   PopProject.push({
+      //     title: this.title,
+      //     content: this.info,
+      //     due: format(this.due, "Do MMM yyy"),
+      //     person: this.person,
+      //     status: "ongoing",
+      //   });
+      //   console.log("databass");
+      // }
       if (this.$refs.form.validate()) {
-        console.log(this.title, this.info, "heeeee");
-        const PopProject = {
+        const PopProject = database.ref("data");
+        PopProject.push({
           title: this.title,
-          // Changed variable name from content to info
           content: this.info,
           due: format(this.due, "Do MMM yyy"),
-          person: "this.person",
+          person: "sasaaa",
           status: "ongoing",
-        };
-
-        try {
-          // Used await with db.collection("projects").add(PopProject)
-          const docRef = await db.collection("projects").add(PopProject);
-          // Logged the ID of the added document upon successful addition
-          // Reset form fields after successful submission
-          this.title = "";
-          this.info = "";
-          this.due = null;
-          console.log("Document written with ID: ", "lalalalalla");
-        } catch (error) {
-          console.error("Error adding document: ", error);
-        }
+        });
+        console.log("Project added to database");
       }
     },
   },
