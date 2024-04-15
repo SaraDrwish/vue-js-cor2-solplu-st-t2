@@ -49,7 +49,7 @@
 
 <script>
 import format from "date-fns/format";
-import database from "../fb";
+import analytics from "../fb";
 export default {
   name: "Popup",
   data() {
@@ -70,30 +70,10 @@ export default {
       return val.length >= 3 || "min length has to be more than 3";
     },
     submit() {
-      // if (this.$refs.form.validate()) {
-      // console.log("heeeee");
-      // console.log(this.title, this.info, "heeeee");
-      // const PopProject = {
-      //   title: this.title,
-      //   content: this.info,
-      //   due: format(this.due, "Do MMM yyy"),
-      //   person: this.person,
-      //   status: "ongoing",
-      // };
+      console.log("heeeee");
 
-      // const database = database.database();
-      //   const PopProject = database.ref("data");
-      //   PopProject.push({
-      //     title: this.title,
-      //     content: this.info,
-      //     due: format(this.due, "Do MMM yyy"),
-      //     person: this.person,
-      //     status: "ongoing",
-      //   });
-      //   console.log("databass");
-      // }
       if (this.$refs.form.validate()) {
-        const PopProject = database.ref("data");
+        const PopProject = analytics.ref("data");
         PopProject.push({
           title: this.title,
           content: this.info,
