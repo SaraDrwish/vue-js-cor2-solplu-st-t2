@@ -68,32 +68,30 @@ export default {
     };
   },
   methods: {
-    submit() {
+    async submit() {
       if (this.$refs.form.validate()) {
         console.log(this.title, this.info, "heeeee");
         const PopProject = {
           title: this.title,
-          content: this.content,
+          // Changed variable name from content to info
+          content: this.info,
           due: format(this.due, "Do MMM yyy"),
           person: "this.person",
           status: "ongoing",
         };
-        // const db = getFirestore(firebaseApp);
 
-        db
-          // .collection("projects")
-          // .get(PopProject)
-          // .then(() => {
-          //   console.log("added in db");
-          // });
-          .collection("projects")
-          .add(PopProject)
-          .then(() => {
-            console.log("Added to database");
-          })
-          .catch((error) => {
-            console.error("Error adding document: ", error);
-          });
+        try {
+          // Used await with db.collection("projects").add(PopProject)
+          const docRef = await db.collection("projects").add(PopProject);
+          // Logged the ID of the added document upon successful addition
+          // Reset form fields after successful submission
+          this.title = "";
+          this.info = "";
+          this.due = null;
+          console.log("Document written with ID: ", "lalalalalla");
+        } catch (error) {
+          console.error("Error adding document: ", error);
+        }
       }
     },
   },

@@ -1,6 +1,8 @@
 // import firebase from "firebase/app";
 // import "firebase/app";
+
 // import { initializeApp } from "firebase/app";
+// import { getFirestore } from "firebase/firestore";
 
 // const config = {
 //   apiKey: "AIzaSyA-43fKVq96bJqI5_9ICavQwuAcjSNnhkM",
@@ -12,13 +14,16 @@
 //   measurementId: "G-6WRQTDTWTY",
 // };
 
-// firebase.initializeApp(config);
-// const db = firebase.firestore();
+// const firebaseApp = initializeApp(config);
+// // const db = firebase.firestore();
+// const db = getFirestore(firebaseApp);
 
+// // const db = getFirestore(firebaseApp);
 // db.settings({ timestampsInSnapshots: true });
+
 // export default db;
 
-// //////////////////////
+// // //////////
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
@@ -33,12 +38,10 @@ const config = {
   measurementId: "G-6WRQTDTWTY",
 };
 
-// Initialize Firebase
 const firebaseApp = initializeApp(config);
 const db = getFirestore(firebaseApp);
+
+// Set Firestore settings
+db.settings({ timestampsInSnapshots: true });
+
 export default db;
-// const analytics = getAnalytics(firebase);
-// ///
-// analytics.settings({ timestampsInSnapshots: true });
-// export default config;
-// //////////
